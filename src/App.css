@@ -1,9 +1,35 @@
-#root {
-  /* max-width: 1280px; */
-  /* margin: 0 auto; */
-  padding: 2rem;
-  width: 100%;
-  /* text-align: center; */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif; /* Set your preferred font-family */
+  font-size: 16px; /* Set the base font size */
+  line-height: 1.5;
+  color: #333; /* Set your default text color */
+  display: flex;
+  place-items: center;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html::-webkit-scrollbar {
+  /* display: none; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 .relative {
   position: relative;
@@ -11,6 +37,9 @@
 
 .overflow-hidden {
   overflow: hidden;
+}
+.logo {
+  font-family: "Sequel100Black-85";
 }
 
 .cursor-pointer {
@@ -26,4 +55,96 @@
 }
 .whitespace-nowrap {
   white-space: nowrap;
+}
+
+@font-face {
+  font-family: "Sequel100Black-85";
+  src: local("Sequel100Black-85"),
+    url("./fonts/Sequel100Black-85.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sequel100Black-65";
+  src: local("Sequel100Black-65"),
+    url("./fonts/Sequel100Black-65.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sequel100Black-45";
+  src: local("Sequel100Black-45"),
+    url("./fonts/Sequel100Black-45.ttf") format("truetype");
+}
+
+.center-container {
+  position: relative;
+  /* border: 2px solid red; */
+  height: 600px;
+  width: 80%;
+  max-width: 800px;
+}
+
+.image-container {
+  position: relative;
+  /* border: 2px solid yellow; */
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.image {
+  /* width: 100px; Adjust image size as needed */
+  height: auto;
+  max-height: 550px;
+  margin: 25px;
+
+  /* margin-top: 25px; */
+  /* margin-right: 20px; Adjust margin as needed */
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  width: 90%;
+  left: 0;
+  /* border: 2px solid yellowgreen; */
+}
+
+.title {
+  color: #fff;
+  font-family: "Sequel100Black-65";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.description {
+  margin: 0;
+  font-size: 16px; /* Adjust font size as needed */
+}
+.project-section {
+  background-color: #fff;
+  color: #cccbcb;
+  padding: 2rem;
+}
+.footer-section {
+  background-color: #111111;
+  color: #b8ff1f;
+  padding: 2rem;
+}
+.large-headings {
+  color: #e4e3e3;
+  font-family: "Sequel100Black-65";
+  font-size: 160px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.sayHello {
+  color: #cccbcb;
+  font-family: Sequel100Black-45;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
