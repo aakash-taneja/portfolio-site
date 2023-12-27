@@ -1,5 +1,3 @@
-import React from "react";
-
 const ProjectSection = () => {
   return (
     <div className="project-section" style={{ width: "100%" }}>

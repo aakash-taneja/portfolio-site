@@ -1,4 +1,3 @@
-import React from "react";
 import AnimatedLink from "./AnimatedLink";
 
 const navLinks = [

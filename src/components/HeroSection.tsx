@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const HeroSection = () => {
   const [transform, setTransform] = useState({ x: 0, y: 0 });

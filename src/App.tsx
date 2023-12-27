@@ -1,5 +1,4 @@
 import "./App.css";
-import AnimatedLink from "./components/AnimatedLink";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import NavTop from "./components/NavTop";
