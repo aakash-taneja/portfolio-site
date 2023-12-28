@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const FormInput = (props: any) => {
   const [focused, setFocused] = useState(false);
   const { label, errorMessage, onChange, id, ...inputProps } = props;
 
-  const handleFocus = (e: any) => {
+  const handleFocus = () => {
     setFocused(true);
   };
   return (
