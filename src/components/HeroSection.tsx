@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import WordByWordSlideUpAnimation from "./WordByWordSlideUpAnimation";
 
 const HeroSection = () => {
   const [transform, setTransform] = useState({ x: 0, y: 0 });
   const [title, setTitle] = useState("Your Title"); // Set your initial title here
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
   const [animationClass, setAnimationClass] = useState("");
 
   const handleMouseMove = (e: any) => {
@@ -14,18 +13,18 @@ const HeroSection = () => {
     setTransform({ x: x * 0.1, y: y * 0.1 });
   };
 
-  const animationTimeout = setTimeout(() => {
+  setTimeout(() => {
     setAnimationClass("animate");
   }, 500);
 
   const handleMouseOut = () => {
     setTransform({ x: 0, y: 0 });
-    setIsHovered(false);
+    // setIsHovered(false);
   };
-  const handleMouseOver = () => {
-    setTitle("Aakash Taneja");
-    setIsHovered(true);
-  };
+  // const handleMouseOver = () => {
+  //   setTitle("Aakash Taneja");
+  //   // setIsHovered(true);
+  // };
   useEffect(() => {
     setTitle("Aakash Taneja");
   }, []);
