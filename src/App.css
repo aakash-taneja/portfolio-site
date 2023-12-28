@@ -80,28 +80,35 @@ html::-webkit-scrollbar {
 
 .center-container {
   position: relative;
-  /* border: 2px solid red; */
-  height: 600px;
+
+  height: calc(100vh - 100px);
   width: 80%;
   max-width: 800px;
 }
 
 .image-container {
-  position: relative;
+  /* position: relative; */
   /* border: 2px solid yellow; */
   position: absolute;
   right: 0;
   bottom: 0;
+  overflow: hidden;
 }
 
 .image {
   /* width: 100px; Adjust image size as needed */
   height: auto;
-  max-height: 550px;
+  max-height: 80vh;
   margin: 25px;
+  filter: grayscale(1);
+  transition: filter 0.5s ease-in-out;
+  /* will-change: filter; */
 
   /* margin-top: 25px; */
   /* margin-right: 20px; Adjust margin as needed */
+}
+.image:hover {
+  filter: grayscale(0);
 }
 
 .text-container {
@@ -111,6 +118,7 @@ html::-webkit-scrollbar {
   top: 50%;
   width: 90%;
   left: 0;
+  overflow: hidden;
   /* border: 2px solid yellowgreen; */
 }
 
@@ -124,29 +132,35 @@ html::-webkit-scrollbar {
   letter-spacing: 0.2rem;
   position: relative;
   z-index: 1;
+  overflow: hidden;
+  transform: translateY(150%);
+  transition: transform 0.3s ease-out;
 }
-.title-name::before,
-.title-name::after {
+.title.animate {
+  transform: translateY(0);
+}
+
+.title-name {
+  color: #b8ff1f;
+}
+.title-name::before {
   content: attr(data-title);
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-text-fill-color: #0f111d;
-  -webkit-text-stroke-color: #b8ff1f;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-color: #ffffff8a;
+  -webkit-text-stroke-width: 0.5px;
   transform: translate3d(9px, 7px, 0);
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
   z-index: -1;
 }
-.title-name::after {
-  transform: translate3d(15px, 13px, 0);
-  transition: opacity 0.5s ease-in-out;
-  z-index: -2;
+.center-container:hover .title-name::before {
+  opacity: 1;
 }
 
-.title-name:hover::before,
-.title-name:hover::after {
+.title-name:hover.title-name::before {
   opacity: 1;
 }
 
@@ -163,6 +177,11 @@ html::-webkit-scrollbar {
   background-color: #fff;
   color: #cccbcb;
   padding: 2rem;
+}
+.projects-container {
+  margin-top: 150px;
+  z-index: 10;
+  position: relative;
 }
 .contact-section {
   background-color: #fff;
@@ -181,6 +200,8 @@ html::-webkit-scrollbar {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  position: absolute;
+  z-index: 1;
 }
 .sayHello {
   color: #cccbcb;
@@ -239,4 +260,12 @@ html::-webkit-scrollbar {
 
 .accent-color {
   color: #b8ff1f;
+}
+.project-tags {
+  color: #cccbcb;
+  font-family: DMSans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }

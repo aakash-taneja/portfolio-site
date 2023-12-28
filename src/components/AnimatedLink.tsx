@@ -15,7 +15,7 @@ const AnimatedLink = ({ title }: any) => {
         animation={letterAnimation}
         isHovered={isHovered}
       />
-      <div className="absolute" style={{ top: 0 }}>
+      <div className="absolute" style={{ top: 0, color: "#b8ff1f" }}>
         <AnimatedWord
           title={title}
           animation={letterAnimationTwo}

@@ -1,34 +1,35 @@
 import { useEffect, useState } from "react";
+import WordByWordSlideUpAnimation from "./WordByWordSlideUpAnimation";
 
 const HeroSection = () => {
   const [transform, setTransform] = useState({ x: 0, y: 0 });
   const [title, setTitle] = useState("Your Title"); // Set your initial title here
+  const [isHovered, setIsHovered] = useState(false);
+  const [animationClass, setAnimationClass] = useState("");
 
   const handleMouseMove = (e: any) => {
     const position = e.currentTarget.getBoundingClientRect();
-    const x = e.pageX - position.left - position.width / 2;
-    const y = e.pageY - position.top - position.height / 2;
+    const x = e.clientX - position.left - position.width / 2;
+    const y = e.clientY - position.top - position.height / 2;
     setTransform({ x: x * 0.1, y: y * 0.1 });
   };
 
+  const animationTimeout = setTimeout(() => {
+    setAnimationClass("animate");
+  }, 500);
+
   const handleMouseOut = () => {
     setTransform({ x: 0, y: 0 });
+    setIsHovered(false);
+  };
+  const handleMouseOver = () => {
+    setTitle("Aakash Taneja");
+    setIsHovered(true);
   };
   useEffect(() => {
-    // Update the title based on your logic
-    // For simplicity, using a fixed title in this example
     setTitle("Aakash Taneja");
   }, []);
   return (
-    // <div className="center-container">
-    //   <div className="content-container">
-    //     <img src="myPhoto.jpg" alt="Your Image" className="image" />
-    //     <div className="text-container">
-    //       <h1 className="title">Your Title</h1>
-    //       <p className="description">Your one-line text description.</p>
-    //     </div>
-    //   </div>
-    // </div>
     <>
       <div
         style={{
@@ -51,12 +52,12 @@ const HeroSection = () => {
               className="image"
               style={{
                 transform: `translate(${transform.x}px, ${transform.y}px)`,
-                transition: "transform 0.3s ease-out",
+                transition: "all 0.3s ease-out",
               }}
             />
           </div>
           <div className="text-container">
-            <h1 className="title">
+            <h1 className={`title ${animationClass}`}>
               Hey, <br />I am{" "}
               <span className="title title-name" data-title={title}>
                 {title}
