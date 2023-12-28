@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
   const [transform, setTransform] = useState({ x: 0, y: 0 });
+  const [title, setTitle] = useState("Your Title"); // Set your initial title here
+
   const handleMouseMove = (e: any) => {
     const position = e.currentTarget.getBoundingClientRect();
     const x = e.pageX - position.left - position.width / 2;
@@ -12,6 +14,11 @@ const HeroSection = () => {
   const handleMouseOut = () => {
     setTransform({ x: 0, y: 0 });
   };
+  useEffect(() => {
+    // Update the title based on your logic
+    // For simplicity, using a fixed title in this example
+    setTitle("Aakash Taneja");
+  }, []);
   return (
     // <div className="center-container">
     //   <div className="content-container">
@@ -50,7 +57,10 @@ const HeroSection = () => {
           </div>
           <div className="text-container">
             <h1 className="title">
-              Hey, <br />I am Aakash Taneja
+              Hey, <br />I am{" "}
+              <span className="title title-name" data-title={title}>
+                {title}
+              </span>
             </h1>
             <p className="description">
               A multidisciplinary frontend developer

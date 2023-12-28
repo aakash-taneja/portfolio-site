@@ -9,6 +9,7 @@ const navLinks = [
 const NavTop = () => {
   return (
     <div
+      className="nav-container"
       style={{
         display: "flex",
         justifyContent: "space-between",
@@ -21,12 +22,17 @@ const NavTop = () => {
         padding: "2rem",
         // boxSizing: "border-box",
         zIndex: 100,
+        fontFamily: "DMSans",
       }}
     >
-      <div className="logo" style={{ width: "60%", fontSize: "20px" }}>
+      <div
+        className="logo"
+        style={{ width: "60%", fontSize: "20px", mixBlendMode: "difference" }}
+      >
         Aakash Taneja
       </div>
       <div
+        className="nav-links"
         style={{
           display: "flex",
           alignItems: "flex-start",
@@ -40,7 +46,7 @@ const NavTop = () => {
       >
         {navLinks.map((links, index) => {
           return (
-            <div className="relative" key={index}>
+            <div className="relative nav-link" key={index}>
               <AnimatedLink title={links.title} />
             </div>
           );

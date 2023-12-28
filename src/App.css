@@ -72,6 +72,11 @@ html::-webkit-scrollbar {
   src: local("Sequel100Black-45"),
     url("./fonts/Sequel100Black-45.ttf") format("truetype");
 }
+@font-face {
+  font-family: "DMSans";
+  src: local("DMSans-Regular"),
+    url("./fonts/DMSans-Regular.ttf") format("truetype");
+}
 
 .center-container {
   position: relative;
@@ -116,13 +121,50 @@ html::-webkit-scrollbar {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  letter-spacing: 0.2rem;
+  position: relative;
+  z-index: 1;
+}
+.title-name::before,
+.title-name::after {
+  content: attr(data-title);
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-text-fill-color: #0f111d;
+  -webkit-text-stroke-color: #b8ff1f;
+  -webkit-text-stroke-width: 1px;
+  transform: translate3d(9px, 7px, 0);
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  z-index: -1;
+}
+.title-name::after {
+  transform: translate3d(15px, 13px, 0);
+  transition: opacity 0.5s ease-in-out;
+  z-index: -2;
+}
+
+.title-name:hover::before,
+.title-name:hover::after {
+  opacity: 1;
 }
 
 .description {
   margin: 0;
-  font-size: 16px; /* Adjust font size as needed */
+  color: #fff;
+  font-family: "DMSans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 .project-section {
+  background-color: #fff;
+  color: #cccbcb;
+  padding: 2rem;
+}
+.contact-section {
   background-color: #fff;
   color: #cccbcb;
   padding: 2rem;
@@ -147,4 +189,54 @@ html::-webkit-scrollbar {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.nav-container,
+.nav-links,
+.logo,
+.nav-link::before {
+  mix-blend-mode: difference;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+.form-label {
+  font-size: 12px;
+  color: gray;
+}
+.form-input {
+  padding: 15px;
+  margin: 10px 0px;
+  /* border-radius: 5px; */
+  border: 0px;
+  border-bottom: 1px solid gray;
+}
+.form-error {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+.form-input:invalid[focused="true"] {
+  border-bottom: 1px solid red;
+}
+
+.form-input:invalid[focused="true"] ~ span {
+  display: block;
+}
+
+.form-heading {
+  color: #111;
+  font-family: "Sequel100Black-45";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.accent-color {
+  color: #b8ff1f;
 }
