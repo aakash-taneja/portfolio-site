@@ -1,7 +1,7 @@
 import ProjectSingle from "./ProjectSingle";
 import WordByWordSlideUpAnimation from "./WordByWordSlideUpAnimation";
 
-const ProjectSection = () => {
+const ProjectSection = (updateCursor: any) => {
   return (
     <div className="project-section" style={{ width: "100%" }}>
       <div className="large-headings">Work</div>
@@ -10,12 +10,12 @@ const ProjectSection = () => {
           <div
             style={{ width: "50%", display: "flex", alignItems: "flex-start" }}
           >
-            <ProjectSingle />
+            <ProjectSingle updateCursor={updateCursor} />
           </div>
           <div
             style={{ width: "50%", display: "flex", alignItems: "flex-end" }}
           >
-            <ProjectSingle />
+            <ProjectSingle updateCursor={updateCursor} />
           </div>
         </div>
         <div
@@ -26,7 +26,7 @@ const ProjectSection = () => {
             justifyContent: "center",
           }}
         >
-          <ProjectSingle />
+          <ProjectSingle updateCursor={updateCursor} />
         </div>
       </div>
       <WordByWordSlideUpAnimation text="Aakash" />
