@@ -34,6 +34,10 @@ function App() {
       cursor.style.width = "8px";
       cursor.style.left = "-50%";
       cursor.style.top = "-50%";
+      cursorFollower.style.height = "40px";
+      cursorFollower.style.width = "40px";
+      cursorFollower.style.left = "-50%";
+      cursorFollower.style.top = "-50%";
       // cursor.style.transition = "0.1s ease";
     };
 
@@ -42,6 +46,10 @@ function App() {
       cursor.style.width = "0px";
       cursor.style.left = "-50%";
       cursor.style.top = "-50%";
+      cursorFollower.style.height = "0px";
+      cursorFollower.style.width = "0px";
+      cursorFollower.style.left = "-50%";
+      cursorFollower.style.top = "-50%";
       // cursor.style.transition = "0.1s ease";
     };
 
