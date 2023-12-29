@@ -18,6 +18,7 @@ const NavTop = () => {
         // flexGrow: 1,
         position: "fixed",
         top: "0px",
+        color: "#ffffff",
         // left: "0px",
         padding: "2rem",
         // boxSizing: "border-box",

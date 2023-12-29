@@ -1,7 +1,50 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FormInput from "./FormInput";
 
 const ContactSection = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState("down");
+  const [moveWork, setMoveWork] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    const currentScrollPosition = window.scrollY;
+    setScrollDirection(currentScrollPosition > scrollPosition ? "down" : "up");
+    setScrollPosition(currentScrollPosition);
+  };
+  useEffect(() => {
+    // Handle initial scroll position on mount
+    setScrollPosition(window.scrollY);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollPosition]);
+
+  useEffect(() => {
+    const sectionTop = sectionRef.current?.getBoundingClientRect().top;
+    const threshold = window.innerHeight / 2; // Midpoint threshold
+    const moveThreshold = threshold * 2; // Scroll threshold to start moving
+
+    if (
+      scrollDirection === "down" &&
+      sectionTop !== undefined &&
+      sectionTop <= threshold &&
+      sectionTop >= -threshold
+    ) {
+      setMoveWork(true);
+    } else if (
+      scrollDirection === "up" &&
+      sectionTop !== undefined &&
+      sectionTop > threshold
+    ) {
+      setMoveWork(false);
+    }
+  }, [scrollPosition, scrollDirection]);
+
   const [values, setValues] = useState<any>({
     name: "",
     email: "",
@@ -45,8 +88,14 @@ const ContactSection = () => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
   return (
-    <div className="contact-section" style={{ width: "100%" }}>
-      <div className="large-headings">Contact</div>
+    <div ref={sectionRef} className="contact-section" style={{ width: "100%" }}>
+      <div
+        className={`large-headings contactHeading ${
+          moveWork ? "move-right" : ""
+        }`}
+      >
+        Contact
+      </div>
       <div
         style={{
           display: "flex",
