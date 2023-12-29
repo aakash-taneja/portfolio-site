@@ -131,7 +131,9 @@ const ContactSection = () => {
             >
               Say Hi at ...
             </h1>
-            <h1 className="footerEmail">aakashtaneja12@gmail.com</h1>
+            <h1 className="footerEmail accent-color">
+              aakashtaneja12@gmail.com
+            </h1>
           </div>
         </div>
       </div>

@@ -5,9 +5,40 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aakash Taneja</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
   </head>
   <body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      var cursor = document.querySelector(".cursor");
+      var follower = document.querySelector(".cursor-follower");
+
+      var posX = 0,
+        posY = 0,
+        mouseX = 0,
+        mouseY = 0;
+
+      TweenMax.to({}, 0.016, {
+        repeat: -1,
+        onRepeat: function () {
+          posX += (mouseX - posX) / 9;
+          posY += (mouseY - posY) / 9;
+
+          follower.style.left = posX - 20 + "px";
+          follower.style.top = posY - 20 + "px";
+
+          cursor.style.left = mouseX + "px";
+          cursor.style.top = mouseY + "px";
+        },
+      });
+
+      document.addEventListener("mousemove", function (e) {
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+      });
+    </script>
   </body>
 </html>
