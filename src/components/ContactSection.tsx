@@ -27,7 +27,7 @@ const ContactSection = () => {
   useEffect(() => {
     const sectionTop = sectionRef.current?.getBoundingClientRect().top;
     const threshold = window.innerHeight / 2; // Midpoint threshold
-    const moveThreshold = threshold * 2; // Scroll threshold to start moving
+    // const moveThreshold = threshold * 2; // Scroll threshold to start moving
 
     if (
       scrollDirection === "down" &&
