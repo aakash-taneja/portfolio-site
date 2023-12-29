@@ -1,10 +1,14 @@
 import AnimatedLink from "./AnimatedLink";
 
-const navLinks = [
-  { title: "Work", href: "#work" },
-  { title: "About", href: "#about" },
-  { title: "Contact", href: "#contact" },
-  { title: "resume", href: "#resume" },
+const navLinks: any = [
+  { title: "Work", href: "#work", external: false },
+  { title: "About", href: "/about", external: true },
+  { title: "Contact", href: "#contact", external: false },
+  {
+    title: "resume",
+    href: "https://drive.google.com/file/d/1p8Krl7X5RbpqNMC_mnP6MhiDoA0LLN7J/view?usp=sharing",
+    external: true,
+  },
 ];
 const NavTop = () => {
   return (
@@ -45,10 +49,14 @@ const NavTop = () => {
           width: "40%",
         }}
       >
-        {navLinks.map((links, index) => {
+        {navLinks.map((links: any, index: any) => {
           return (
             <div className="relative nav-link" key={index}>
-              <AnimatedLink title={links.title} />
+              <AnimatedLink
+                title={links.title}
+                href={links.href}
+                external={links.external}
+              />
             </div>
           );
         })}

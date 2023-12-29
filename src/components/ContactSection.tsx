@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import FormInput from "./FormInput";
+import MagneticButton from "./MagneticButton";
 
 const ContactSection = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -88,7 +89,12 @@ const ContactSection = () => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
   return (
-    <div ref={sectionRef} className="contact-section" style={{ width: "100%" }}>
+    <div
+      ref={sectionRef}
+      className="contact-section"
+      style={{ width: "100%" }}
+      id="#contact"
+    >
       <div
         className={`large-headings contactHeading ${
           moveWork ? "move-right" : ""
@@ -138,17 +144,8 @@ const ContactSection = () => {
                   onChange={onChange}
                 />
               ))}
-              <button
-                style={{
-                  padding: "20px",
-                  borderRadius: "40px",
-                  border: "1px solid #111",
-                  width: "150px",
-                  background: "#fff",
-                }}
-              >
-                Send
-              </button>
+
+              <MagneticButton />
             </form>
           </div>
         </div>

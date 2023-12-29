@@ -1,3 +1,5 @@
+import AnimatedLink from "./AnimatedLink";
+
 const Footer = () => {
   return (
     <div
@@ -17,24 +19,72 @@ const Footer = () => {
           display: "flex",
           justifyContent: "space-between",
           width: "100%",
-          marginTop: "2rem",
+          marginTop: "1.5rem",
         }}
       >
         <div>
-          <div style={{ marginTop: "0.5rem" }}>aakashtaneja12@gmail.com</div>
-          <div style={{ marginTop: "0.5rem" }}>t.me/aakasht12</div>
+          <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
+            <AnimatedLink
+              title="aakashtaneja12@gmail.com"
+              href="mailto:aakashtaneja12@gmail.com"
+              external={true}
+            />
+          </div>
+          <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
+            <AnimatedLink
+              title="t.me/aakasht12"
+              href="https://t.me/aakasht12"
+              external={true}
+            />
+          </div>
         </div>
         <div>
-          <div style={{ marginTop: "0.5rem" }}>My Projects</div>
-          <div style={{ marginTop: "0.5rem" }}>About</div>
-          <div style={{ marginTop: "0.5rem" }}>Resume</div>
-          <div style={{ marginTop: "0.5rem" }}>Contact</div>
+          <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
+            <AnimatedLink title="My Projects" href="#work" />
+          </div>
+          <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
+            <AnimatedLink title="About" href="/about" external={true} />
+          </div>
+          <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
+            <AnimatedLink title="Contact" href="#contact" />
+          </div>
+          <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
+            <AnimatedLink
+              title="Resume"
+              href="https://drive.google.com/file/d/1p8Krl7X5RbpqNMC_mnP6MhiDoA0LLN7J/view?usp=sharing"
+              external={true}
+            />
+          </div>
         </div>
         <div>
-          <div style={{ marginTop: "0.5rem" }}>Twitter</div>
-          <div style={{ marginTop: "0.5rem" }}>LinkedIn</div>
-          <div style={{ marginTop: "0.5rem" }}>Instagram</div>
-          <div style={{ marginTop: "0.5rem" }}>Github</div>
+          <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
+            <AnimatedLink
+              title="Twitter"
+              href="https://x.com/AakashTaneja6"
+              external={true}
+            />
+          </div>
+          <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
+            <AnimatedLink
+              title="LinkedIn"
+              href="https://linkedin.com/in/aakash-taneja"
+              external={true}
+            />
+          </div>
+          <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
+            <AnimatedLink
+              title="Github"
+              href="https://github.com/aakash-taneja"
+              external={true}
+            />
+          </div>
+          <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
+            <AnimatedLink
+              title="Instagram"
+              href="https://drive.google.com/file/d/1p8Krl7X5RbpqNMC_mnP6MhiDoA0LLN7J/view?usp=sharing"
+              external={true}
+            />
+          </div>
         </div>
       </div>
       <hr

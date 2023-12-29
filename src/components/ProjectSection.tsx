@@ -40,7 +40,7 @@ const ProjectSection = (updateCursor: any) => {
   }, [scrollPosition, scrollDirection]);
 
   return (
-    <div className="project-section" style={{ width: "100%" }}>
+    <div className="project-section" style={{ width: "100%" }} id="#work">
       <div
         className={`large-headings workHeading ${moveWork ? "move-right" : ""}`}
       >
