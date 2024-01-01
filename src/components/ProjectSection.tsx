@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ProjectSingle from "./ProjectSingle";
 import WordByWordSlideUpAnimation from "./WordByWordSlideUpAnimation";
+import transition from "../transition";
 
 const ProjectSection = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -75,4 +76,4 @@ const ProjectSection = () => {
   );
 };
 
-export default ProjectSection;
+export default transition(ProjectSection);

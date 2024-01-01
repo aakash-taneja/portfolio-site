@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ProjectSingle = () => {
   const [transform, setTransform] = useState({ x: 0, y: 0 });
@@ -25,7 +26,7 @@ const ProjectSingle = () => {
     // updateCursor(false);
   };
   return (
-    <a href="/project1">
+    <Link to="/project1">
       <div
         className="project-single-container"
         style={{
@@ -79,7 +80,7 @@ const ProjectSingle = () => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
