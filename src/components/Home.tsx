@@ -1,11 +1,9 @@
-import { AnimatePresence, motion } from "framer-motion";
+import transition from "../transition";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import HeroSection from "./HeroSection";
 import NavTop from "./NavTop";
 import ProjectSection from "./ProjectSection";
-import { useEffect, useState } from "react";
-import transition from "../transition";
 
 const Home = () => {
   return (

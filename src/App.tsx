@@ -1,17 +1,16 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import About from "./components/About";
 import Home from "./components/Home";
-import "./fonts/Sequel100Black-85.ttf";
 import Project1 from "./components/Project1";
+import "./fonts/Sequel100Black-85.ttf";
 
 function App() {
   const location = useLocation();
 
-  const [cursorActive, setCursorActive] = useState(false);
-  const [overlayVisible, setOverlayVisible] = useState(false);
+  // const [cursorActive, setCursorActive] = useState(false);
   // console.log(window.location.pathname);
   useEffect(() => {
     const container = document.getElementById(
@@ -83,9 +82,9 @@ function App() {
     };
   }, []);
 
-  const updateCursor = (value: boolean) => {
-    setCursorActive(value);
-  };
+  // const updateCursor = (value: boolean) => {
+  //   setCursorActive(value);
+  // };
 
   return (
     <>
@@ -141,14 +140,8 @@ function App() {
           </Routes>
         </AnimatePresence>
 
-        <div
-          id="cursor"
-          className={`cursor ${cursorActive ? "active" : ""}`}
-        ></div>
-        <div
-          id="cursor-follower"
-          className={`cursor-follower ${cursorActive ? "active" : ""}`}
-        ></div>
+        <div id="cursor" className={`cursor `}></div>
+        <div id="cursor-follower" className={`cursor-follower `}></div>
         {/* {overlayVisible && (
           <div
             id="cursor-overlay"

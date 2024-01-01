@@ -2,7 +2,6 @@ import transition from "../transition";
 import Footer from "./Footer";
 import HeroSection from "./HeroSection";
 import NavTop from "./NavTop";
-import { motion } from "framer-motion";
 
 const About = () => {
   return (
