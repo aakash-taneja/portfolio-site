@@ -6,6 +6,8 @@ import About from "./components/About";
 import Home from "./components/Home";
 import Project1 from "./components/Project1";
 import "./fonts/Sequel100Black-85.ttf";
+import Project2 from "./components/Project2";
+import Project3 from "./components/Project3";
 
 function App() {
   const location = useLocation();
@@ -120,6 +122,34 @@ function App() {
                 //   onAnimationComplete={() => setOverlayVisible(true)}
                 // >
                 <Project1 />
+                // </motion.div>
+              }
+            />
+            <Route
+              path="/project2"
+              element={
+                // <motion.div
+                //   initial={{ opacity: 0 }}
+                //   animate={{ opacity: 1 }}
+                //   exit={{ opacity: 0 }}
+                //   transition={{ duration: 0.5 }}
+                //   onAnimationComplete={() => setOverlayVisible(true)}
+                // >
+                <Project2 />
+                // </motion.div>
+              }
+            />
+            <Route
+              path="/project3"
+              element={
+                // <motion.div
+                //   initial={{ opacity: 0 }}
+                //   animate={{ opacity: 1 }}
+                //   exit={{ opacity: 0 }}
+                //   transition={{ duration: 0.5 }}
+                //   onAnimationComplete={() => setOverlayVisible(true)}
+                // >
+                <Project3 />
                 // </motion.div>
               }
             />

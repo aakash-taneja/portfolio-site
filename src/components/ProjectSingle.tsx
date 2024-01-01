@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ProjectSingle = () => {
+const ProjectSingle = ({ image, title, tag1, tag2, href }: any) => {
   const [transform, setTransform] = useState({ x: 0, y: 0 });
   const [transformText, setTransformText] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -26,7 +26,7 @@ const ProjectSingle = () => {
     // updateCursor(false);
   };
   return (
-    <Link to="/project1">
+    <Link to={href}>
       <div
         className="project-single-container"
         style={{
@@ -40,7 +40,7 @@ const ProjectSingle = () => {
       >
         <img
           className="project-image"
-          src="project1.png"
+          src={image}
           width={"90%"}
           height={"100%"}
           onMouseMove={handleMouseMove}
@@ -48,10 +48,11 @@ const ProjectSingle = () => {
           style={{
             objectFit: "cover",
             transform: `translate(${transform.x}px, ${transform.y}px) ${
-              isHovered ? "scale(0.9)" : ""
+              isHovered ? "scale(0.96)" : ""
             } `,
             // transform: "",
             transition: "all 0.3s ease-out",
+            filter: `${isHovered ? "grayscale(0%)" : "grayscale(30%)"}`,
           }}
         />
         <div
@@ -72,11 +73,11 @@ const ProjectSingle = () => {
               transition: "all 0.3s ease-out",
             }}
           >
-            <span className="title title-name" data-title="Project 1">
-              Project 1
+            <span className="title title-name" data-title={title}>
+              {title}
             </span>
-            <h1 className="project-tags">HTML</h1>
-            <h1 className="project-tags">CSS</h1>
+            <h1 className="project-tags">{tag1}</h1>
+            <h1 className="project-tags">{tag2}</h1>
           </div>
         </div>
       </div>

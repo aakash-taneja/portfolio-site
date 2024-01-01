@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import ProjectSingle from "./ProjectSingle";
-import WordByWordSlideUpAnimation from "./WordByWordSlideUpAnimation";
 import transition from "../transition";
 
 const ProjectSection = () => {
@@ -41,37 +40,63 @@ const ProjectSection = () => {
   }, [scrollPosition, scrollDirection]);
 
   return (
-    <div className="project-section" style={{ width: "100%" }} id="work">
-      <div
-        className={`large-headings workHeading ${moveWork ? "move-right" : ""}`}
-      >
-        Work
-      </div>
-      <div className="projects-container">
-        <div style={{ display: "flex", width: "100%", height: "30rem" }}>
-          <div
-            style={{ width: "50%", display: "flex", alignItems: "flex-start" }}
-          >
-            <ProjectSingle />
-          </div>
-          <div
-            style={{ width: "50%", display: "flex", alignItems: "flex-end" }}
-          >
-            <ProjectSingle />
-          </div>
-        </div>
+    <div className="project-section " style={{ width: "100%" }} id="work">
+      <div className="maxwidth">
         <div
-          style={{
-            display: "flex",
-            width: "60%",
-            marginTop: "2rem",
-            justifyContent: "center",
-          }}
+          className={` large-headings workHeading ${
+            moveWork ? "move-right" : ""
+          }`}
         >
-          <ProjectSingle />
+          Work
+        </div>
+        <div className="projects-container">
+          <div style={{ display: "flex", width: "100%", height: "30rem" }}>
+            <div
+              style={{
+                width: "50%",
+                display: "flex",
+                alignItems: "flex-start",
+              }}
+            >
+              <ProjectSingle
+                image="Macha.jpg"
+                title="Macha"
+                tag1="Next.js"
+                tag2="Typescript"
+                href="/project1"
+              />
+            </div>
+            <div
+              style={{ width: "50%", display: "flex", alignItems: "flex-end" }}
+            >
+              <ProjectSingle
+                image="dstore.png"
+                title="dStore01"
+                tag1="Next.js"
+                tag2="Typescript"
+                href="/project2"
+              />
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              width: "60%",
+              marginTop: "2rem",
+              justifyContent: "center",
+            }}
+          >
+            <ProjectSingle
+              image="pir.png"
+              title="Paint It Red"
+              tag1="Wordpress"
+              tag2="CSS"
+              href="/project3"
+            />
+          </div>
         </div>
       </div>
-      <WordByWordSlideUpAnimation text="Aakash" />
+      {/* <WordByWordSlideUpAnimation text="Aakash" /> */}
     </div>
   );
 };

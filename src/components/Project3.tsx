@@ -2,7 +2,7 @@ import transition from "../transition";
 import MagneticButton from "./MagneticButton";
 import NavTop from "./NavTop";
 
-const Project1 = () => {
+const Project3 = () => {
   return (
     <>
       <NavTop />
@@ -14,7 +14,7 @@ const Project1 = () => {
           display: "flex",
           justifyContent: "center",
 
-          backgroundImage: `url('Macha.jpg')`,
+          backgroundImage: `url('pir.png')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backdropFilter: "blur(10px)",
@@ -26,8 +26,8 @@ const Project1 = () => {
             height: "100%",
             width: "100%",
             backdropFilter: "blur(5px) grayscale(35%) ",
-            paddingLeft: "5rem",
-            paddingRight: "5rem",
+            paddingLeft: "7rem",
+            paddingRight: "7rem",
           }}
         >
           <div
@@ -78,4 +78,4 @@ const Project1 = () => {
   );
 };
 
-export default transition(Project1);
+export default transition(Project3);

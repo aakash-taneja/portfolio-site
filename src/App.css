@@ -1,3 +1,7 @@
+/* #root {
+  max-width: 1280px;
+
+} */
 body,
 h1,
 h2,
@@ -181,6 +185,10 @@ html::-webkit-scrollbar {
   background-color: #fff;
   color: #cccbcb;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 100%; */
 }
 .projects-container {
   margin-top: 170px;
@@ -522,4 +530,16 @@ a {
   background-color: black;
   transform-origin: top;
   z-index: 100000;
+}
+.project-heading {
+  color: #fff;
+  font-family: "Sequel100Black-85";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 50px;
+}
+.maxwidth {
+  max-width: 1280px;
 }

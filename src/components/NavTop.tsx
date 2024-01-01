@@ -40,6 +40,7 @@ const NavTop = () => {
         // boxSizing: "border-box",
         zIndex: 100,
         fontFamily: "DMSans",
+        // maxWidth: "1280px",
       }}
     >
       <Link
@@ -59,7 +60,7 @@ const NavTop = () => {
           // height: "100vh",
           textTransform: "uppercase",
           justifyContent: "space-between",
-          width: "40%",
+          width: "30%",
         }}
       >
         <div className="relative nav-link">
@@ -78,7 +79,7 @@ const NavTop = () => {
             />
           </div>
         </div>
-        <div className="relative nav-link">
+        {/* <div className="relative nav-link">
           <Link to={"/about"}>
             <AnimatedLink
               title={"About"}
@@ -86,7 +87,7 @@ const NavTop = () => {
               // external={links.external}
             />
           </Link>
-        </div>
+        </div> */}
 
         <div className="relative nav-link">
           <div
