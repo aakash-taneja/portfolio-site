@@ -1,14 +1,18 @@
-import "./App.css";
-import Footer from "./components/Footer";
-import HeroSection from "./components/HeroSection";
-import ContactSection from "./components/ContactSection";
-import NavTop from "./components/NavTop";
-import ProjectSection from "./components/ProjectSection";
-import "./fonts/Sequel100Black-85.ttf";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import "./App.css";
+import About from "./components/About";
+import Home from "./components/Home";
+import "./fonts/Sequel100Black-85.ttf";
+import Project1 from "./components/Project1";
 
 function App() {
+  const location = useLocation();
+
   const [cursorActive, setCursorActive] = useState(false);
+  const [overlayVisible, setOverlayVisible] = useState(false);
+  // console.log(window.location.pathname);
   useEffect(() => {
     const container = document.getElementById(
       "cursor-effect-container"
@@ -82,18 +86,61 @@ function App() {
   const updateCursor = (value: boolean) => {
     setCursorActive(value);
   };
+
   return (
     <>
       <div
         id="cursor-effect-container"
         className="cursor-effect-container bg-white text-black p-5 text-3xl"
+        style={{ width: "100%" }}
       >
-        {/* navigation */}
-        <NavTop />
-        <HeroSection />
-        <ProjectSection updateCursor={updateCursor} />
-        <ContactSection />
-        <Footer />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route
+              path="/about"
+              element={
+                // <motion.div
+                //   initial={{ opacity: 0 }}
+                //   animate={{ opacity: 1 }}
+                //   exit={{ opacity: 0 }}
+                //   transition={{ duration: 0.5 }}
+                //   onAnimationComplete={() => setOverlayVisible(true)}
+                // >
+                <About />
+                // </motion.div>
+              }
+            />
+            <Route
+              path="/project1"
+              element={
+                // <motion.div
+                //   initial={{ opacity: 0 }}
+                //   animate={{ opacity: 1 }}
+                //   exit={{ opacity: 0 }}
+                //   transition={{ duration: 0.5 }}
+                //   onAnimationComplete={() => setOverlayVisible(true)}
+                // >
+                <Project1 />
+                // </motion.div>
+              }
+            />
+            <Route
+              index
+              element={
+                // <motion.div
+                //   initial={{ opacity: 0 }}
+                //   animate={{ opacity: 1 }}
+                //   exit={{ opacity: 0 }}
+                //   transition={{ duration: 0.5 }}
+                //   // onAnimationComplete={() => setOverlayVisible(true)}
+                // >
+                <Home />
+                // </motion.div>
+              }
+            />
+          </Routes>
+        </AnimatePresence>
+
         <div
           id="cursor"
           className={`cursor ${cursorActive ? "active" : ""}`}
@@ -102,6 +149,13 @@ function App() {
           id="cursor-follower"
           className={`cursor-follower ${cursorActive ? "active" : ""}`}
         ></div>
+        {/* {overlayVisible && (
+          <div
+            id="cursor-overlay"
+            className="cursor-overlay"
+            onAnimationEnd={() => setOverlayVisible(false)}
+          ></div>
+        )} */}
       </div>
     </>
   );

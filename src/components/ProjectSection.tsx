@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProjectSingle from "./ProjectSingle";
 import WordByWordSlideUpAnimation from "./WordByWordSlideUpAnimation";
 
-const ProjectSection = (updateCursor: any) => {
+const ProjectSection = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [scrollDirection, setScrollDirection] = useState("down");
   const [moveWork, setMoveWork] = useState(false);
@@ -40,7 +40,7 @@ const ProjectSection = (updateCursor: any) => {
   }, [scrollPosition, scrollDirection]);
 
   return (
-    <div className="project-section" style={{ width: "100%" }} id="#work">
+    <div className="project-section" style={{ width: "100%" }} id="work">
       <div
         className={`large-headings workHeading ${moveWork ? "move-right" : ""}`}
       >
@@ -51,12 +51,12 @@ const ProjectSection = (updateCursor: any) => {
           <div
             style={{ width: "50%", display: "flex", alignItems: "flex-start" }}
           >
-            <ProjectSingle updateCursor={updateCursor} />
+            <ProjectSingle />
           </div>
           <div
             style={{ width: "50%", display: "flex", alignItems: "flex-end" }}
           >
-            <ProjectSingle updateCursor={updateCursor} />
+            <ProjectSingle />
           </div>
         </div>
         <div
@@ -67,7 +67,7 @@ const ProjectSection = (updateCursor: any) => {
             justifyContent: "center",
           }}
         >
-          <ProjectSingle updateCursor={updateCursor} />
+          <ProjectSingle />
         </div>
       </div>
       <WordByWordSlideUpAnimation text="Aakash" />

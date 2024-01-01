@@ -93,7 +93,7 @@ const ContactSection = () => {
       ref={sectionRef}
       className="contact-section"
       style={{ width: "100%" }}
-      id="#contact"
+      id="contact"
     >
       <div
         className={`large-headings contactHeading ${

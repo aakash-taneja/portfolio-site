@@ -1,24 +1,26 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const AnimatedLink = ({ title, href, external }: any) => {
+const AnimatedLink = ({ title }: any) => {
   const [isHovered, setHovered] = useState(false);
-  const scrollToSection = () => {
-    if (external) {
-      window.open(href, "_blank", "noopener,noreferrer");
-    } else {
-      const section = document.getElementById(href);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
+  // const handleLinkClick = () => {
+  //   if (href.startsWith("http")) {
+  //     window.open(href, "_blank", "noopener,noreferrer");
+  //   } else if (href.startsWith("#")) {
+  //     const section = document.getElementById(href.substring(1));
+  //     if (section) {
+  //       section.scrollIntoView({ behavior: "smooth" });
+  //     }
+  //   } else {
+  //     window.open(href, "_self", "noopener,noreferrer");
+  //   }
+  // };
   return (
     <motion.div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative overflow-hidden cursor-pointer"
-      onClick={scrollToSection}
+      // onClick={handleLinkClick}
     >
       <AnimatedWord
         title={title}
