@@ -512,6 +512,18 @@ a {
   line-height: normal;
 }
 
+@media screen and (max-width: 1040px) {
+  .center-container {
+    width: 100%;
+  }
+  .workHeading {
+    left: 10rem;
+  }
+  .large-headings {
+    font-size: 8rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   body {
     font-size: 10px;
@@ -594,11 +606,6 @@ a {
     width: 100%;
   }
   .nav-links {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 1040px) {
-  .center-container {
     width: 100%;
   }
 }
