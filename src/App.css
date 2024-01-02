@@ -222,7 +222,7 @@ a {
   position: relative;
   height: calc(100vh - 100px);
   width: 80%;
-  max-width: 800px;
+  max-width: 850px;
 }
 .image-container {
   position: absolute;
@@ -594,6 +594,11 @@ a {
     width: 100%;
   }
   .nav-links {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1040px) {
+  .center-container {
     width: 100%;
   }
 }
