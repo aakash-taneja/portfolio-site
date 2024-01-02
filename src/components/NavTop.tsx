@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import AnimatedLink from "./AnimatedLink";
-import { useState } from "react";
+// import { useState } from "react";
 
 const NavTop = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+  // const [isMenuOpen, setMenuOpen] = useState(false);
 
   // const toggleMenu = () => {
   //   setMenuOpen(!isMenuOpen);
