@@ -8,12 +8,10 @@ const Project1 = () => {
       <NavTop />
       <div
         style={{
-          // border: "2px solid blue",
           height: "100vh",
           width: "100%",
           display: "flex",
           justifyContent: "center",
-
           backgroundImage: `url('Macha.jpg')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -65,9 +63,6 @@ const Project1 = () => {
               right: "7rem",
               paddingTop: "2rem",
               paddingBottom: "2rem",
-              // width: "100%",
-              // display: "flex",
-              // justifyContent: "flex-end",
             }}
           >
             Next Project

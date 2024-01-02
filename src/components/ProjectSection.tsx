@@ -12,8 +12,8 @@ const ProjectSection = () => {
     setScrollDirection(currentScrollPosition > scrollPosition ? "down" : "up");
     setScrollPosition(currentScrollPosition);
   };
+
   useEffect(() => {
-    // Handle initial scroll position on mount
     setScrollPosition(window.scrollY);
   }, []);
 
@@ -50,14 +50,8 @@ const ProjectSection = () => {
           Work
         </div>
         <div className="projects-container">
-          <div style={{ display: "flex", width: "100%", height: "30rem" }}>
-            <div
-              style={{
-                width: "50%",
-                display: "flex",
-                alignItems: "flex-start",
-              }}
-            >
+          <div className="project-row">
+            <div className="project-row-left">
               <ProjectSingle
                 image="Macha.jpg"
                 title="Macha"
@@ -66,9 +60,7 @@ const ProjectSection = () => {
                 href="/project1"
               />
             </div>
-            <div
-              style={{ width: "50%", display: "flex", alignItems: "flex-end" }}
-            >
+            <div className="project-row-right">
               <ProjectSingle
                 image="dstore.png"
                 title="dStore01"
@@ -78,14 +70,7 @@ const ProjectSection = () => {
               />
             </div>
           </div>
-          <div
-            style={{
-              display: "flex",
-              width: "60%",
-              marginTop: "2rem",
-              justifyContent: "center",
-            }}
-          >
+          <div className="project-row-last">
             <ProjectSingle
               image="pir.png"
               title="Paint It Red"
@@ -96,7 +81,6 @@ const ProjectSection = () => {
           </div>
         </div>
       </div>
-      {/* <WordByWordSlideUpAnimation text="Aakash" /> */}
     </div>
   );
 };

@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 
 const HeroSection = () => {
   const [transform, setTransform] = useState({ x: 0, y: 0 });
-  const [title, setTitle] = useState("Your Title"); // Set your initial title here
-  // const [isHovered, setIsHovered] = useState(false);
+  const [title, setTitle] = useState("Your Title");
   const [animationClass, setAnimationClass] = useState("");
 
   const handleMouseMove = (e: any) => {
@@ -19,20 +18,16 @@ const HeroSection = () => {
 
   const handleMouseOut = () => {
     setTransform({ x: 0, y: 0 });
-    // setIsHovered(false);
   };
-  // const handleMouseOver = () => {
-  //   setTitle("Aakash Taneja");
-  //   // setIsHovered(true);
-  // };
+
   useEffect(() => {
     setTitle("Aakash Taneja");
   }, []);
+
   return (
     <>
       <div
         style={{
-          // border: "2px solid blue",
           width: "100%",
           display: "flex",
           justifyContent: "center",

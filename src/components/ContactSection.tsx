@@ -14,7 +14,6 @@ const ContactSection = () => {
     setScrollPosition(currentScrollPosition);
   };
   useEffect(() => {
-    // Handle initial scroll position on mount
     setScrollPosition(window.scrollY);
   }, []);
 
@@ -27,9 +26,7 @@ const ContactSection = () => {
 
   useEffect(() => {
     const sectionTop = sectionRef.current?.getBoundingClientRect().top;
-    const threshold = window.innerHeight / 2; // Midpoint threshold
-    // const moveThreshold = threshold * 2; // Scroll threshold to start moving
-
+    const threshold = window.innerHeight / 2;
     if (
       scrollDirection === "down" &&
       sectionTop !== undefined &&
@@ -68,7 +65,6 @@ const ContactSection = () => {
       name: "email",
       type: "email",
       placeholder: "Enter Email Address",
-      // errorMessage: "It should be a valid email address!",
       label: "Email Address",
       required: true,
     },
@@ -102,23 +98,8 @@ const ContactSection = () => {
       >
         Contact
       </div>
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          marginTop: "250px",
-          zIndex: 10,
-          position: "relative",
-        }}
-      >
-        <div
-          style={{
-            width: "60%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+      <div className="contact-container">
+        <div className="contact-left">
           <div>
             <h1 className="form-heading">Have a project in mind?</h1>
             <h5
@@ -149,15 +130,7 @@ const ContactSection = () => {
             </form>
           </div>
         </div>
-        <div
-          style={{
-            width: "40%",
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
+        <div className="contact-right">
           <div className="large-headings">OR</div>
           <div
             style={{

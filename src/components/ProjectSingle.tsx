@@ -12,8 +12,6 @@ const ProjectSingle = ({ image, title, tag1, tag2, href }: any) => {
     const y = e.clientY - position.top - position.height / 2;
     setTransform({ x: x * 0.15, y: y * 0.15 });
     setTransformText({ x: x * 0.05, y: y * 0.05 });
-    // updateCursor(true);
-    // setIsHovered(true);
   };
 
   const handleMouseEnter = () => {
@@ -23,21 +21,10 @@ const ProjectSingle = ({ image, title, tag1, tag2, href }: any) => {
   const handleMouseOut = () => {
     setTransform({ x: 0, y: 0 });
     setIsHovered(false);
-    // updateCursor(false);
   };
   return (
-    <Link to={href}>
-      <div
-        className="project-single-container"
-        style={{
-          width: "90%",
-          // height: "33.5rem",
-          // border: "2px solid green",
-          position: "relative",
-          padding: "10px",
-        }}
-        onMouseEnter={handleMouseEnter}
-      >
+    <Link to={href} className="project-detail-link">
+      <div className="project-single-container" onMouseEnter={handleMouseEnter}>
         <img
           className="project-image"
           src={image}
@@ -50,23 +37,11 @@ const ProjectSingle = ({ image, title, tag1, tag2, href }: any) => {
             transform: `translate(${transform.x}px, ${transform.y}px) ${
               isHovered ? "scale(0.96)" : ""
             } `,
-            // transform: "",
             transition: "all 0.3s ease-out",
             filter: `${isHovered ? "grayscale(0%)" : "grayscale(30%)"}`,
           }}
         />
-        <div
-          style={{
-            // color: "#000",
-            display: "flex",
-            flexDirection: "column",
-            position: "absolute",
-            top: "50%",
-            // width: " 90%",
-            right: 0,
-            alignItems: "flex-end",
-          }}
-        >
+        <div className="project-name-details">
           <div
             style={{
               transform: `translate(${transformText.x}px, ${transformText.y}px)`,
