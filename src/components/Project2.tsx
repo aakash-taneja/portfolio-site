@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import transition from "../transition";
 import MagneticButton from "./MagneticButton";
 import NavTop from "./NavTop";
@@ -40,8 +41,8 @@ const Project2 = () => {
             }}
           >
             <div style={{ width: "50%" }}>
-              <h1 className="project-heading">
-                Elaborate Project title with attached link
+              <h1 className="project-heading" style={{ color: "#000" }}>
+                DStore01
               </h1>
               <MagneticButton
                 onClick={() => {
@@ -50,22 +51,25 @@ const Project2 = () => {
                 filled="true"
               >
                 <div style={{ display: "flex" }}>
-                  <div className="buttonText">Live Link</div>
+                  <div className="buttonText" style={{ color: "#000" }}>
+                    Live Link
+                  </div>
                   <img src="greenarrow.svg" style={{ marginLeft: "10px" }} />
                 </div>
               </MagneticButton>
             </div>
-            <div style={{ width: "40%" }}>
-              A web-based 2D drawing tool created for soccer coaches and
-              strategists to plan and visualise manoeuvres for their team. It
-              gives the user complete control to draw curved lines signalling
-              direction of play, and to drag/drop assets (such as cones, balls,
-              players) anywhere on the pitch. Built for the KNVB (Royal Dutch
-              Football Association) whilst working at Momkai in 2018. The tool
-              has been integrated into KNVB’s internal systems, used as both a
-              strategy and an educational tool - allowing them to create, save
-              and share designs with team mates. The example URL I’ve provided
-              is a stand-alone demo.
+            <div style={{ width: "40%", color: "#000" }}>
+              dStore01 is an innovative file-sharing application that harnesses
+              IPFS technology through Lighthouse. The platform enables seamless
+              file uploading, viewing, and the creation of shareable download
+              links. Its user-friendly interface facilitates image uploading
+              with an intuitive drag-and-drop or local storage selection
+              feature.The smart contract governs the storage of download links
+              and manages permission access. When a user uploads a file, the
+              smart contract records relevant details, including user
+              credentials and file information, on the blockchain. This
+              decentralized approach ensures data integrity and prevents
+              unauthorized alterations.
             </div>
           </div>
           <div
@@ -78,9 +82,10 @@ const Project2 = () => {
               // width: "100%",
               // display: "flex",
               // justifyContent: "flex-end",
+              color: "#000",
             }}
           >
-            Next Project
+            <Link to="/project3">Next Project</Link>
           </div>
         </div>
       </div>

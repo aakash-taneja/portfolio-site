@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import transition from "../transition";
 import MagneticButton from "./MagneticButton";
 import NavTop from "./NavTop";
@@ -40,9 +41,7 @@ const Project3 = () => {
             }}
           >
             <div style={{ width: "50%" }}>
-              <h1 className="project-heading">
-                Elaborate Project title with attached link
-              </h1>
+              <h1 className="project-heading">PaintItRed</h1>
               <MagneticButton
                 onClick={() => {
                   window.open("https://paintitred.in/");
@@ -56,16 +55,17 @@ const Project3 = () => {
               </MagneticButton>
             </div>
             <div style={{ width: "40%" }}>
-              A web-based 2D drawing tool created for soccer coaches and
-              strategists to plan and visualise manoeuvres for their team. It
-              gives the user complete control to draw curved lines signalling
-              direction of play, and to drag/drop assets (such as cones, balls,
-              players) anywhere on the pitch. Built for the KNVB (Royal Dutch
-              Football Association) whilst working at Momkai in 2018. The tool
-              has been integrated into KNVB’s internal systems, used as both a
-              strategy and an educational tool - allowing them to create, save
-              and share designs with team mates. The example URL I’ve provided
-              is a stand-alone demo.
+              As a UI Developer at Paint It Red (NGO), I played a pivotal role
+              in advancing the organization's mission to combat gender
+              disparity. By crafting and implementing a fully responsive
+              WordPress website, I contributed to enhancing community
+              empowerment initiatives. Paint It Red, founded by two dedicated
+              women, serves as a catalyst for positive change, channeling their
+              passion into meaningful projects. Through my expertise, I
+              successfully translated the NGO's objectives into an engaging
+              online platform, fostering awareness and support for the noble
+              cause. This experience not only honed my UI development skills but
+              also allowed me to contribute to a meaningful social cause.
             </div>
           </div>
           <div
@@ -80,7 +80,7 @@ const Project3 = () => {
               // justifyContent: "flex-end",
             }}
           >
-            Next Project
+            <Link to="/project1">Next Project</Link>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import transition from "../transition";
 import MagneticButton from "./MagneticButton";
 import NavTop from "./NavTop";
@@ -38,30 +39,35 @@ const Project1 = () => {
             }}
           >
             <div style={{ width: "50%" }}>
-              <h1 className="project-heading">Macha Landing Page</h1>
+              <h1 className="project-heading">Macha Landing Page And Studio</h1>
               <MagneticButton
                 onClick={() => {
-                  window.open("https://macha.ai");
+                  window.open(
+                    "https://0xaakashtaneja.notion.site/0xaakashtaneja/Macha-2190928fb7354898842e87cb7bbcc90c"
+                  );
                 }}
                 filled="flase"
               >
                 <div style={{ display: "flex" }}>
-                  <div className="buttonText">Live Link</div>
+                  <div className="buttonText">More Details</div>
                   <img src="greenarrow.svg" style={{ marginLeft: "10px" }} />
                 </div>
               </MagneticButton>
             </div>
             <div style={{ width: "40%" }}>
-              A web-based 2D drawing tool created for soccer coaches and
-              strategists to plan and visualise manoeuvres for their team. It
-              gives the user complete control to draw curved lines signalling
-              direction of play, and to drag/drop assets (such as cones, balls,
-              players) anywhere on the pitch. Built for the KNVB (Royal Dutch
-              Football Association) whilst working at Momkai in 2018. The tool
-              has been integrated into KNVB’s internal systems, used as both a
-              strategy and an educational tool - allowing them to create, save
-              and share designs with team mates. The example URL I’ve provided
-              is a stand-alone demo.
+              Over the past year, I've been working as a Product Engineer at
+              Macha. Initially starting as a frontend engineer, I played a key
+              role in developing Macha Messenger, a decentralized messaging
+              platform. I worked both on its web and mobile version with group
+              chat and wallet-to-wallet chats powered by XMTP. Moving forward, I
+              took the lead in developing Macha's landing page, and ensured the
+              successfull end to end development of landing page, i was also
+              managing two interns, and my role went beyond coding and i was
+              working hand in hand with design and marketing teams for visual
+              aesthetics and branding part of it . My journey at Macha has been
+              dynamic, involving frontend, backend, and leadership
+              responsibilities, showcasing my adaptability and commitment to
+              delivering quality products.
             </div>
           </div>
           <div
@@ -73,7 +79,7 @@ const Project1 = () => {
               paddingBottom: "2rem",
             }}
           >
-            Next Project
+            <Link to="/project2">Next Project</Link>
           </div>
         </div>
       </div>
