@@ -16,8 +16,12 @@ const Home = () => {
     <>
       <NavTop />
       <HeroSection />
-      <ProjectSection />
-      <ContactSection />
+      <section id="project">
+        <ProjectSection />
+      </section>
+      <section id="contact_section">
+        <ContactSection />
+      </section>
       <Footer />
     </>
     // </motion.div>

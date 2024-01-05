@@ -34,14 +34,22 @@ const Project1 = () => {
               width: "100%",
               height: "100%",
               alignItems: "center",
-              justifyContent: "space-between",
+              justifyContent: "center",
             }}
           >
             <div style={{ width: "50%" }}>
-              <h1 className="project-heading">
-                Elaborate Project title with attached link
-              </h1>
-              <MagneticButton />
+              <h1 className="project-heading">Macha Landing Page</h1>
+              <MagneticButton
+                onClick={() => {
+                  window.open("https://macha.ai");
+                }}
+                filled="flase"
+              >
+                <div style={{ display: "flex" }}>
+                  <div className="buttonText">Live Link</div>
+                  <img src="greenarrow.svg" style={{ marginLeft: "10px" }} />
+                </div>
+              </MagneticButton>
             </div>
             <div style={{ width: "40%" }}>
               A web-based 2D drawing tool created for soccer coaches and

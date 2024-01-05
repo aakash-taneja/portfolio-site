@@ -43,7 +43,17 @@ const Project3 = () => {
               <h1 className="project-heading">
                 Elaborate Project title with attached link
               </h1>
-              <MagneticButton />
+              <MagneticButton
+                onClick={() => {
+                  window.open("https://paintitred.in/");
+                }}
+                filled="false"
+              >
+                <div style={{ display: "flex" }}>
+                  <div className="buttonText">Live Link</div>
+                  <img src="greenarrow.svg" style={{ marginLeft: "10px" }} />
+                </div>
+              </MagneticButton>
             </div>
             <div style={{ width: "40%" }}>
               A web-based 2D drawing tool created for soccer coaches and

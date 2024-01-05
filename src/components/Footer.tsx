@@ -1,12 +1,14 @@
+import { Link, useNavigate } from "react-router-dom";
 import AnimatedLink from "./AnimatedLink";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="footer-section"
       style={{
         width: "100%",
-        // height: "100vh",
+        height: "100vh",
         display: "flex",
         alignItems: "flex-start",
         flexDirection: "column",
@@ -24,66 +26,80 @@ const Footer = () => {
       >
         <div>
           <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
-            <AnimatedLink
-              title="aakashtaneja12@gmail.com"
-              href="mailto:aakashtaneja12@gmail.com"
-              external={true}
-            />
+            <Link target="_blank" to={"mailto:aakashtaneja12@gmail.com"}>
+              <AnimatedLink title="aakashtaneja12@gmail.com" />
+            </Link>
           </div>
           <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
-            <AnimatedLink
-              title="t.me/aakasht12"
-              href="https://t.me/aakasht12"
-              external={true}
-            />
+            <Link target="_blank" to={"https://t.me/aakasht12"}>
+              <AnimatedLink title="t.me/aakasht12" />
+            </Link>
           </div>
         </div>
         <div>
           <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
-            <AnimatedLink title="My Projects" href="#work" />
+            <div
+              onClick={() => {
+                const section = document.getElementById("work");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  navigate("/#project");
+                }
+              }}
+            >
+              <AnimatedLink title={"Work"} />
+            </div>
+          </div>
+
+          <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
+            <div
+              onClick={() => {
+                const section = document.getElementById("contact");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  navigate("/#contact_section");
+                }
+              }}
+            >
+              <AnimatedLink title={"Contact"} />
+            </div>
           </div>
           <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
-            <AnimatedLink title="About" href="/about" external={true} />
+            <Link
+              target="_blank"
+              to={
+                "https://drive.google.com/file/d/1p8Krl7X5RbpqNMC_mnP6MhiDoA0LLN7J/view?usp=sharing"
+              }
+            >
+              <AnimatedLink title="Resume" />
+            </Link>
           </div>
           <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
-            <AnimatedLink title="Contact" href="#contact" />
-          </div>
-          <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
-            <AnimatedLink
-              title="Resume"
-              href="https://drive.google.com/file/d/1p8Krl7X5RbpqNMC_mnP6MhiDoA0LLN7J/view?usp=sharing"
-              external={true}
-            />
+            <AnimatedLink title="About" href="/" external={true} />
           </div>
         </div>
         <div>
           <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
-            <AnimatedLink
-              title="Twitter"
-              href="https://x.com/AakashTaneja6"
-              external={true}
-            />
+            <Link target="_blank" to={"https://x.com/AakashTaneja6"}>
+              <AnimatedLink title="Twitter" />
+            </Link>
           </div>
           <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
-            <AnimatedLink
-              title="LinkedIn"
-              href="https://linkedin.com/in/aakash-taneja"
-              external={true}
-            />
+            <Link target="_blank" to={"https://linkedin.com/in/aakash-taneja"}>
+              <AnimatedLink title="LinkedIn" />
+            </Link>
           </div>
           <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
-            <AnimatedLink
-              title="Github"
-              href="https://github.com/aakash-taneja"
-              external={true}
-            />
+            <Link target="_blank" to={"https://github.com/aakash-taneja"}>
+              <AnimatedLink title="Github" />
+            </Link>
           </div>
           <div className="relative nav-link" style={{ marginTop: "0.5rem" }}>
-            <AnimatedLink
-              title="Instagram"
-              href="https://drive.google.com/file/d/1p8Krl7X5RbpqNMC_mnP6MhiDoA0LLN7J/view?usp=sharing"
-              external={true}
-            />
+            <Link target="_blank" to={"https://hey.xyz/u/aakashtaneja"}>
+              <AnimatedLink title="Lens" />
+            </Link>
           </div>
         </div>
       </div>

@@ -126,7 +126,9 @@ const ContactSection = () => {
                 />
               ))}
 
-              <MagneticButton />
+              <MagneticButton filled={true}>
+                <div className="buttonText">Send</div>
+              </MagneticButton>
             </form>
           </div>
         </div>

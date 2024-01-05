@@ -159,15 +159,22 @@ li {
 .magnetic-button {
   padding: 20px;
   border-radius: 40px;
-  border: 1px solid #111;
+
   width: 150px;
-  background: #fff;
+
   display: flex;
   justify-content: center;
-  color: #111;
+
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.whiteBg {
+  background: #fff;
+  color: #111;
+  border: 1px solid #111;
 }
 .magnetic-button::before {
   content: "";
@@ -189,6 +196,15 @@ li {
 .magnetic-button.exit::before {
   left: 75px;
   top: -100px;
+}
+
+.buttonText {
+  /* color: #fff; */
+  font-family: DMSans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 a {
@@ -358,6 +374,7 @@ a {
   width: 50%;
   display: flex;
   align-items: flex-start;
+  justify-content: flex-end;
 }
 .project-row-right {
   width: 50%;
@@ -372,6 +389,9 @@ a {
 }
 .project-detail-link {
   width: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 .project-single-container {
   width: 90%;
@@ -403,7 +423,7 @@ a {
 .contact-form {
   display: flex;
   flex-direction: column;
-  width: 280px;
+  width: 90%;
 }
 .form-label {
   color: #111;
@@ -477,7 +497,7 @@ a {
   background-color: #111111;
   color: #b8ff1f;
   padding: 2rem;
-  padding-top: 100px;
+  padding-top: 150px;
   padding-left: 6rem;
   padding-right: 6rem;
 }
@@ -604,8 +624,16 @@ a {
   }
   .logo {
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .nav-links {
     width: 100%;
+  }
+  .cursor {
+    display: none;
+  }
+  .cursor-follower {
+    display: none;
   }
 }

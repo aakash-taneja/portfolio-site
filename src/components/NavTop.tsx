@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AnimatedLink from "./AnimatedLink";
 // import { useState } from "react";
 
@@ -8,6 +8,8 @@ const NavTop = () => {
   // const toggleMenu = () => {
   //   setMenuOpen(!isMenuOpen);
   // };
+
+  const navigate = useNavigate();
 
   return (
     <div className="nav-container">
@@ -21,6 +23,8 @@ const NavTop = () => {
               const section = document.getElementById("work");
               if (section) {
                 section.scrollIntoView({ behavior: "smooth" });
+              } else {
+                navigate("/#project");
               }
             }}
           >
@@ -43,6 +47,8 @@ const NavTop = () => {
               const section = document.getElementById("contact");
               if (section) {
                 section.scrollIntoView({ behavior: "smooth" });
+              } else {
+                navigate("/#contact_section");
               }
             }}
           >
